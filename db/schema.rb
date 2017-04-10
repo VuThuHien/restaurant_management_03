@@ -38,8 +38,12 @@ ActiveRecord::Schema.define(version: 20170321023257) do
   end
 
   create_table "combos", force: :cascade do |t|
+    t.string   "name"
     t.string   "description"
     t.integer  "discount"
+    t.string   "image"
+    t.datetime "from"
+    t.datetime "to"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -83,10 +87,10 @@ ActiveRecord::Schema.define(version: 20170321023257) do
     t.string   "code"
     t.date     "time_in"
     t.date     "time_out"
-    t.boolean  "isConfirm"
+    t.boolean  "isConfirm",  default: false
     t.integer  "discount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.index ["guest_id"], name: "index_orders_on_guest_id"
     t.index ["table_id"], name: "index_orders_on_table_id"
   end

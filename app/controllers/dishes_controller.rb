@@ -1,10 +1,11 @@
 class DishesController < ApplicationController
-  before_action :find_dish, except: :index
+  before_action :find_dish, only: :show
 
   def index
     @search = Dish.ransack params[:q]
-    @search.sorts = %w[name, price] if @search.sorts.empty?
+    @search.sorts = %w(name price) if @search.sorts.empty?
     @dishes = @search.result.page(params[:page]).per_page Settings.limit
+    @categories = Category.all
   end
 
   def show
@@ -16,6 +17,7 @@ class DishesController < ApplicationController
     @dish = Dish.find_by id: params[:id]
     unless @dish
       flash[:danger] = t "flash.dish.find_fail"
+      redirect_to dishes_path
     end
   end
 end

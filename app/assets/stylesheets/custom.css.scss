@@ -78,6 +78,8 @@ $black-like: rgba(0, 0, 0, .6);
 $black-haft: rgba(0, 0, 0, .5);
 $black-dark: rgba(0, 0, 0, .8);
 $fiord: rgba(70, 75, 110, .247059);
+$admin-background: rgba(185, 176, 176, .2);
+$slide-link: #07a6f5;
 
 .footer {
   background-image: url('http://hotelselfoss.is/wp-content/uploads/2015/12/E-Riverside-Restaurant.jpg');
@@ -171,13 +173,13 @@ $fiord: rgba(70, 75, 110, .247059);
 }
 
 #top {
+  animation-duration: .6s;
+  animation-name: fadeInDown;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   filter: blur(.4px);
   height: 100vh;
-  background-position: center center;
-  animation-name: fadeInDown;
-  animation-duration: .6s;
 }
 
 .navbar {
@@ -322,8 +324,8 @@ img.inactived {
   border-radius: 4px;
   color: $dove-gray;
   height: 50px;
-  width: 100%;
   padding: 5px 7px 5px 15px;
+  width: 100%;
 }
 
 .log-btn {
@@ -421,6 +423,7 @@ img.inactived {
 
 .flash-notice {
   border-radius: 4px;
+  display: block;
   left: 0;
   margin: auto;
   padding: 20px 15px;
@@ -448,6 +451,7 @@ img.inactived {
 
 .section {
   color: $black;
+  min-height: 80vh;
   overflow-y: auto;
 
   h1 {
@@ -481,7 +485,7 @@ img.inactived {
     border-radius: 9px;
     color: $white;
     display: inline-block;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
     line-height: 14px;
     padding: 3px 0;
@@ -513,7 +517,7 @@ img.inactived {
     padding-left: 5px;
   }
 
-  th.left {
+  th {
     float: none;
     text-align: left;
   }
@@ -546,7 +550,7 @@ img.inactived {
     background-color: $light-grey;
   }
 
-  tr td.left {
+  tr td {
     text-align: left;
   }
 
@@ -706,8 +710,49 @@ img.inactived {
   background-color: $white;
   border: 1px solid $alto;
   box-shadow: 0 5px 10px $silver-chalice;
-  margin-top: 50px;
+  margin-bottom: 50px;
   padding: 10px;
+
+  span {
+    font-size: 16px;
+  }
+
+  form {
+    font-size: 16px;
+
+    label {
+      padding: 5px 20px 0 0;
+    }
+  }
+
+  .form-dish {
+    label {
+      font-size: 16px;
+    }
+
+    a,
+    [type=submit],
+    [type=reset] {
+      font-size: 16px;
+      margin-top: -30px;
+    }
+
+    span {
+      padding-right: 20px;
+    }
+
+    a,
+    [type=submit],
+    [type=reset] {
+      display: inline;
+      margin: 20px 0 0 20px;
+    }
+
+    [type=text],
+    textarea {
+      margin-bottom: 10px;
+    }
+  }
 }
 
 .form {
@@ -881,8 +926,13 @@ img.inactived {
   padding: 10px 0 15px;
   position: relative;
 
+  .cover {
+    height: auto;
+    width: 600px;
+  }
+
   .menu-desc {
-    margin-bottom: 30px;
+    margin-bottom: -10px;
   }
 
   .menu-entry {
@@ -901,20 +951,22 @@ img.inactived {
   .menu-entry-title {
     background: $white;
     display: table-cell;
-    font-size: 2rem;
     font-weight: 600;
-    padding: 10px 0;
     position: relative;
+    float: left;
     vertical-align: top;
+
+    a {
+      color: $mexican-red;
+    }
 
     .tag {
       background: $white;
       color: $mexican-red;
-      line-height: 1.1;
-      padding-right: 10px;
+      line-height: 4.5;
       position: relative;
       text-transform: uppercase;
-      white-space: pre-wrap;
+      white-space: normal;
       z-index: 2;
     }
   }
@@ -943,9 +995,11 @@ img.inactived {
   .menu-entry-image {
     color: transparent;
     display: inline;
+    float: right;
     font-size: 12px;
     height: 20px;
     margin: 0 0 10px 10px;
+    padding: 15px 0 10px 10px;
     position: relative;
   }
 
@@ -1096,7 +1150,6 @@ img.inactived {
   cursor: default;
   font-size: 18px;
   font-weight: 200;
-  padding: 1em 0 .5em;
   text-align: center;
 
   a,
@@ -1109,13 +1162,15 @@ img.inactived {
   }
 
   .current {
-    background-color: $dark-salem;
+    background-color: $cornflower-blue;
     border-radius: 1em;
+    color: $white;
     display: inline-block;
     font-style: normal;
     font-weight: bold;
-    height: 1.4em;
-    width: 1.4em;
+    height: 2em;
+    padding-top: 5px;
+    width: 2em;
   }
 
   a {
@@ -1142,16 +1197,16 @@ img.inactived {
     z-index: 2;
   }
 
-  a {
+  .link {
     background: $black-dark;
-    color: $white;
+    color: $slide-link;
     font-size: 24px;
     font-weight: 700;
     height: 100%;
     left: 0;
-    padding: 10px 10px 0 30px;
+    padding: 10px 30px 0;
     position: absolute;
-    top: 160px;
+    top: 250px;
     width: 100%;
   }
 
@@ -1160,7 +1215,7 @@ img.inactived {
     font-size: 16px;
     padding: 0 0 0 30px;
     position: absolute;
-    top: 75%;
+    top: 83%;
   }
 
   h1 {
@@ -1180,7 +1235,7 @@ img.inactived {
   }
 
   .valid {
-    color: $yellow;
+    color: $red;
     font-size: 22px;
     font-weight: 700;
   }
@@ -1195,7 +1250,6 @@ img.inactived {
 
   .des a {
     background: transparent;
-    border: solid 1px $white;
     color: $yellow;
     display: inline;
     font-size: 20px;
@@ -1210,9 +1264,18 @@ img.inactived {
   }
 }
 
+.owl-carousel a {
+  img {
+    height: 350px;
+    position: relative;
+    width: 100%;
+  }
+}
+
 .combo-user {
   background: $white;
-  margin-left: 4%;
+  margin: -10px 2% 50px;
+  width: 96%;
 }
 
 .combos {
@@ -1264,7 +1327,7 @@ img.inactived {
 
   h1 {
     border-bottom: 1px solid $mercury;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     height: 75px;
     letter-spacing: 0;
@@ -1386,12 +1449,6 @@ img.inactived {
   cursor: pointer;
 }
 
-.owl-carousel img {
-  height: 350px;
-  position: relative;
-  width: 100%;
-}
-
 .uk-grid {
   display: flex;
   flex-wrap: wrap;
@@ -1451,9 +1508,7 @@ img.inactived {
 }
 
 .uk-cover-background {
-  background: url('https://drive.google.com/uc?id=0B9VYzD5V43juYzlHRjZSVnM4eFU');
-  background-position: center center;
-  background-repeat: no-repeat;
+  background: url('https://drive.google.com/uc?id=0B9VYzD5V43juYzlHRjZSVnM4eFU') no-repeat center center;
   background-size: cover;
   height: 100%;
   position: absolute;
@@ -1499,4 +1554,87 @@ img.inactived {
     padding: 10px 0 0 50px;
     text-transform: uppercase;
   }
+}
+
+.admin-site {
+  background: $admin-background;
+
+  h1 {
+    font-family: 'Oswald';
+    font-size: 44px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .form-control {
+    font-size: 18px;
+    height: auto;
+  }
+
+  li {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+}
+
+.flash-message {
+  border-radius: 4px;
+  display: block;
+  left: 0;
+  margin: auto;
+  padding: 20px 15px 20px 15px;
+  right: 0;
+  top: 50%;
+}
+
+.morecontent span {
+  display: none;
+}
+
+.morelink {
+  display: block;
+
+  &:visited,
+  &:hover,
+  &:focus {
+    color: #337ab7;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.red {
+  color: $red;
+  font-weight: bolder;
+}
+
+.uk-flex-center {
+  justify-content: center;
+}
+
+.uk-subnav {
+  display: flex;
+  flex-wrap: wrap;
+  flex: none;
+  font-size: 16px;
+  list-style: none;
+  margin-left: -10px;
+  margin-top: 30px;
+  padding: 0;
+  position: relative;
+}
+
+.uk-subnav li {
+  letter-spacing: 1px;
+  margin: 0 10px;
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+.user-site {
+  background: $admin-background;
 }
