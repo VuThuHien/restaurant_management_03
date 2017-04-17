@@ -1,14 +1,14 @@
 var wow = new WOW(
-  {
-    boxClass: 'wow',
-    animateClass: 'animated',
-    offset: 0,
-    mobile: true,
-    live: true,
-    callback: function (box) {
-    },
-    scrollContainer: null
-  }
+    {
+      boxClass: 'wow',
+      animateClass: 'animated',
+      offset: 0,
+      mobile: true,
+      live: true,
+      callback: function (box) {
+      },
+      scrollContainer: null
+    }
 );
 wow.init();
 
@@ -128,8 +128,8 @@ $(document).on('turbolinks:load', function(){
       var c = content.substr(0, showChar);
       var h = content.substr(showChar, content.length - showChar);
       var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span>' +
-        '<span class="morecontent"><span>' + h +
-        '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+          '<span class="morecontent"><span>' + h +
+          '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
       $(this).html(html);
     }
   });

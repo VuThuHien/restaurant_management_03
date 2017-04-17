@@ -9,8 +9,55 @@ en:
     book: Booking
     contact: Contact
     admin: Admin Only
+  footer:
+    about: About the house
+    about_content: Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+     sed diam nonummy nibh euismod tincidunt ut laoreet.
+      Dolore magna aliquam erat volutpat ipsum.
+    contact: Contact Detail
+    contact_content1: 123 Delicious Street, San Francisco, CA 10110
+    contact_content2: 010-020-0780
+    contact_content3: hello@company.com
+    open: Opening Hours
+    open_content1: Monday - Firday
+    open_content2: 11:00 AM - 10:00 PM
+    open_content3: Saturday - Sunday
+    open_content4: 10:00 AM - 09:00 PM
+  form:
+    login: This form contain %{count}
+    error: error
+    errors: errors
+    _error: This form contain
+    button: Login
+    lost_pass: Lost your password?
+  flash:
+    dish:
+      find_fail: Dish not found.
+      create_success: Created dish successfullly!
+      update_success: Updated dish successfully!
+      destroy_success: Deleted dish successfully!
+      destroy_fail: Failed. Something's wrong.
+    combo:
+      find_fail: Dish not found.
+      find_fail: Dish not found.
+      create_success: Created combo successfullly!
+      update_success: Updated combo successfully!
+      destroy_success: Deleted combo successfully!
+      destroy_fail: Failed. Something's wrong.
+    category:
+      find_fail: Category not found.
+      create_success: Created category successfully!
+      update_success: Updated category successfully!
+      delete_success: Deleted category successfully!
+      delete_fail: Failed. Something's wrong.
+    order:
+      find_fail: Order not found.
+      create_success: Created order successfully!
+      update_success: Updated order successfully!
+      delete_success: Deleted order successfully!
+      delete_fail: Failed. Something's wrong.
   admin:
-    menu: Menu
+    combo: Combo
     category: Category
     dish: Dish
     order: Check Order
@@ -41,10 +88,12 @@ en:
         name: Dish
         add_dish_button: Creat new dish
         search_fail: Not found.
+      new:
+        title: Create dish
+      edit:
+        title: Edit dish
       show:
         title: Dish information
-        field: Field
-        value: Value
         name: "Name:"
         price: "Price:"
         money: $
@@ -55,16 +104,12 @@ en:
         yes: Yes
         no: No
         edit_dish: Edit dish
-      new:
-        title: Creat dish
-      edit:
-        title: Edit dish
       form:
         name: "Dish name:"
         price: "Price:"
-        description: "Description:"
-        image: "Image link:"
-        active: "Active:"
+        description: Description
+        image: Image link
+        active: Active
         yes: Yes
         no: No
       dish:
@@ -80,7 +125,11 @@ en:
         money: $
         yes: Yes
         no: No
-        opition: Opition
+        view_dish_button: View
+        add_dish_button: Add
+        edit_dish_button: Edit
+        delete_dish_button: Delete
+        delete_warning: Are you sure?
     combos:
       index:
         title: Combos manager
@@ -89,28 +138,26 @@ en:
         title: Create combo
         name: "Combo name:"
         description: "Description:"
-      new:
-        title: Create combo
+      show:
+        title: Combo information
+        category: Category
+        no: No.
+        opition: Opition
+        dish: Dish name
+        name: Combo
+        dishes: LIST DISHES
+        description: Description
+        edit_combo_button: Edit combo
+        delete_dish_button: Delete
+        delete_warning: Are you sure?
       edit:
         title: Edit combo
         delete_combo_button: Delete this combo
-      show:
-        title: Combo information
-        field: Field
-        value: Value
-        name: Combo
-        opition: Opition
-        category: Category
-        description: Description
-        dishes: LIST DISHES
-        no: "No."
-        edit_combo_button: Edit combo
-        delete_dish_button: Delete
       form:
+        create_combo_button: Create combo
+        update_combo_button: Update combo
         name: "Combo name:"
         description: "Description:"
-        discount: "Discount:"
-        image: "Image link:"
         dishes: "Choose dishes:"
       combo:
         search: Search
@@ -118,41 +165,88 @@ en:
         name: Name
         order: No.
         discount: Discount
+        view_combo_button: Details
+        edit_combo_button: Edit
+        delete_combo_button: Delete
+        delete_warning: Are you sure?
         dishes: View dishes
-  footer:
-    about: About the house
-    about_content: Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-     sed diam nonummy nibh euismod tincidunt ut laoreet.
-      Dolore magna aliquam erat volutpat ipsum.
-    contact: Contact Detail
-    contact_content1: 123 Delicious Street, San Francisco, CA 10110
-    contact_content2: 010-020-0780
-    contact_content3: hello@company.com
-    open: Opening Hours
-    open_content1: Monday - Firday
-    open_content2: 11:00 AM - 10:00 PM
-    open_content3: Saturday - Sunday
-    open_content4: 10:00 AM - 09:00 PM
-  form:
-    login: This form contain %{count}
-    error: error
-    errors: errors
-    _error: This form contain
-    button: Login
-    lost_pass: Lost your password?
-  flash:
-    dish:
-      find_fail: Dish not found.
-      create_success: Created dish successfullly!
-      update_success: Updated dish successfully!
-      destroy_success: Deleted dish successfully!
-      destroy_fail: Failed. Something's wrong.
-    combo:
-      find_fail: Combo not found.
-      create_success: Created combo successfullly!
-      update_success: Updated combo successfully!
-      destroy_success: Deleted combo successfully!
-      destroy_fail: Failed. Something's wrong.
+    categories:
+      index:
+        title: Categories manager
+        add_button: Add new category
+        search_fail: Not found
+      form:
+        name: "Category name:"
+        description: "Description:"
+      show:
+        dish: Dish name
+        opition: Opition
+        add_dish_button: Add dish
+        empty: This category hasn't any dish.
+        title: Category information
+        name: Category
+        opition: Opition
+        category: Category
+        description: Description
+        dishes: LIST DISHES
+        no: "No."
+        edit_category_button: Edit category
+      edit:
+        title: Edit category
+      new:
+        title: Create category
+      category:
+        order: No.
+        name: Category
+        opition: Opition
+        search: Search
+        input_keyword: Search for category name or description
+        view_button: Details
+        edit_button: Edit
+        delete_button: Delete
+        delete_warning: Are you sure?
+    orders:
+      index:
+        title: Orders manager
+        add_order_button: Add new order
+      show:
+        title: Order details
+      new:
+        title: Create order
+      edit:
+        title: Edit order
+      form:
+        code: Order code
+        discount: Discount
+        guest_name: Guest name
+        capacity: Capacity
+        date: Date
+        time_in: From
+        time_out: To
+        status: "Status:"
+        approved: Approved
+        canceled: Canceled
+      order:
+        search: Search
+        input_keyword: Search for order code or guest name
+        choose: "--- Choose ---"
+        date: "Date:"
+        check: "Status:"
+        code: Code
+        discount: Discount
+        table: Table
+        capacity: Persons
+        guest_name: Guest name
+        phone: Phone
+        date: Date
+        from: From
+        to: To
+        status: Status
+        all: All
+        approved: Approved
+        canceled: Canceled
+        no_table: Not order
+        action: Action
   button:
     view: Details
     add: Add
@@ -162,24 +256,7 @@ en:
     cancel: Back
     clear: Clear form
     all_dish: View all dishes
-  helpers:
-    submit:
-      dish:
-        create: Create %{model}
-        delete: Delete %{model}
-        update: Save changes to %{model}
-      combo:
-        create: Create %{model}
-        delete: Delete %{model}
-        update: Save changes to %{model}
-      category:
-        create: Create %{model}
-        delete: Delete %{model}
-        update: Save changes to %{model}
-      order:
-        create: Create %{model}
-        delete: Delete %{model}
-        update: Save changes to %{model}
+    delete_warning: Are you sure?
   dishes:
     index:
       title: OUR MENU
@@ -249,6 +326,8 @@ en:
       continue: ... (continued)
       valid_from: " Valid from"
       valid_to: " to"
+    showmore: Show more
+    showless: Show less
   order:
     empty_item: "There are no items in your shopping cart.  Please go menu and add some items to your cart."
     delete: Delete
@@ -257,7 +336,25 @@ en:
     update_quantity: Update Quantity
     total_price: "Total price :"
     quantity: "Quantity:"
-    cart_text: "%{cart_size} dishes in cart ( %{total_price}$ )"
+    cart_text: "%{cart_size} items in your order ( %{total_price}$ )"
     not_valid_or_not_active: "is not valid or is not active."
     not_valid_value: "is not a valid order."
     not_valid: "not valid."
+  helpers:
+    submit:
+      dish:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
+      combo:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
+      category:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
+      order:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
